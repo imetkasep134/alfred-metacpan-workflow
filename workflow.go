@@ -23,7 +23,7 @@ type ModuleXML struct {
 
 // SearchModule returns search distribution by query(q) and returns results as XML.
 func SearchModule(q string) string {
-	results, err := metacpan.SearchAutocomplete(q)
+	suggestions, err := metacpan.SearchAutocompleteSuggest(q)
 
 	if err != nil {
 		return errorToXML(err)
@@ -33,11 +33,16 @@ func SearchModule(q string) string {
 		Item: []ModuleXML{},
 	}
 
-	for _, result := range results {
+	for _, suggestion := range suggestions {
 		xmlType.Item = append(xmlType.Item, ModuleXML{
-			Arg:      result.Fields.Documentation,
-			Title:    result.Fields.Documentation,
-			Subtitle: fmt.Sprintf("%s/%s", result.Fields.Author, result.Fields.Release),
+			Arg:   suggestion.Name,
+			Title: suggestion.Name,
+			Subtitle: fmt.Sprintf(
+				"%s/%s (%s)",
+				suggestion.Author,
+				suggestion.Release,
+				suggestion.Date[0:10],
+			),
 		})
 	}
 
