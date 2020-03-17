@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/codegangsta/cli"
-	wf "github.com/handlename/alfred-metacpan-workflow"
+	wf "github.com/oalders/alfred-metacpan-workflow"
+	"github.com/urfave/cli"
 )
 
 var logger = log.New(os.Stderr, "DEBUG: ", log.Ltime|log.Lshortfile)

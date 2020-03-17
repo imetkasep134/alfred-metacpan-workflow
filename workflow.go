@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"fmt"
 
-	"github.com/handlename/go-metacpan"
+	"github.com/oalders/go-metacpan"
 )
 
 // The ModulesXML defines XML struct of list of distributions.
