@@ -1,7 +1,7 @@
 # Alfred Metacpan Workflow
 
 This is a workflow for [Alfred](http://www.alfredapp.com/).
-It search perl modules from [metacpan](https://metacpan.org/) incrementaly.
+It searches Perl modules from [MetaCPAN](https://metacpan.org/) incrementally.
 
 ## Example
 
@@ -9,7 +9,11 @@ It search perl modules from [metacpan](https://metacpan.org/) incrementaly.
 
 ## Installation
 
-Download [metacpan-x.x.x.alfredworkflow](https://github.com/handlename/alfred-metacpan-workflow/releases) to your computer and double click it.
+* Clone this repository
+
+```sh
+mkdir -p dist && make && open dist/metacpan-0.0.5.alfredworkflow
+```
 
 ## Licence
 
